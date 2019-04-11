@@ -1,0 +1,14 @@
+F:\SistemaPet\Site\FWPet\bin\Release\FWPet.dll
+F:\SistemaPet\Site\FWPet\bin\Release\FWPet.pdb
+F:\SistemaPet\Site\FWPet\bin\Release\MySql.Data.dll
+F:\SistemaPet\Site\FWPet\bin\Release\System.Net.Http.dll
+F:\SistemaPet\Site\FWPet\bin\Release\System.Net.Http.xml
+F:\SistemaPet\Site\FWPet\obj\Release\FWPet.csprojResolveAssemblyReference.cache
+F:\SistemaPet\Site\FWPet\obj\Release\FWPet.dll
+F:\SistemaPet\Site\FWPet\obj\Release\FWPet.pdb
+F:\SistemaPet\Site\FWPet\bin\Release\Newtonsoft.Json.dll
+E:\SistemaPet\Site\FWPet\bin\Release\FWPet.dll
+E:\SistemaPet\Site\FWPet\bin\Release\FWPet.pdb
+E:\SistemaPet\Site\FWPet\obj\Release\FWPet.csprojResolveAssemblyReference.cache
+E:\SistemaPet\Site\FWPet\obj\Release\FWPet.dll
+E:\SistemaPet\Site\FWPet\obj\Release\FWPet.pdb

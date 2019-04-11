@@ -1,0 +1,4 @@
+F:\SistemaPet\Site\Uol.PagSeguro\bin\Release\Uol.PagSeguro.dll
+F:\SistemaPet\Site\Uol.PagSeguro\bin\Release\Uol.PagSeguro.pdb
+F:\SistemaPet\Site\Uol.PagSeguro\obj\Release\Uol.PagSeguro.dll
+F:\SistemaPet\Site\Uol.PagSeguro\obj\Release\Uol.PagSeguro.pdb

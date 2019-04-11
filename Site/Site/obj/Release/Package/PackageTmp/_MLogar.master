@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/_MPrincipal.Master" AutoEventWireup="true" CodeBehind="_MLogar.master.cs" Inherits="Site._MLogar" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="cHeadScripts" runat="server">
+    <link rel="stylesheet" href="css/separate/pages/login.min.css" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cBody" runat="server">
+    <body>
+        <form id="form1" runat="server">
+            <asp:ScriptManager runat="server" ID="scr01Princ" ClientIDMode="Static">
+                <Scripts>
+                    <asp:ScriptReference Path="~/js/lib/jquery/jquery.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/tether/tether.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/bootstrap/bootstrap.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/plugins.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/bootstrap-sweetalert/sweetalert.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/datatables-net/datatables.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/input-mask/jquery.mask.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/input-mask/input-mask-init.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/jquery-tag-editor/jquery.caret.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/jquery-tag-editor/jquery.tag-editor.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/bootstrap-select/bootstrap-select.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/select2/select2.full.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/moment/moment.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/bootstrap-daterangepicker/daterangepicker.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/daterangepicker/daterangepicker.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/fancybox/jquery.fancybox.pack.js" ScriptMode="Auto" />
+
+                    <asp:ScriptReference Path="~/js/lib/clockpicker/bootstrap-clockpicker.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/fullcalendar/locale-all.js" ScriptMode="Auto" />
+                    
+                    <asp:ScriptReference Path="~/js/lib/jScrollPane/jquery.jscrollpane.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/jScrollPane/jquery.mousewheel.js" ScriptMode="Auto" />
+
+                    <asp:ScriptReference Path="~/js/carrega.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/app.js" ScriptMode="Auto" />
+                </Scripts>
+            </asp:ScriptManager>
+        <asp:ContentPlaceHolder ID="cConteudo" runat="server"></asp:ContentPlaceHolder>
+        <script>
+            function AlertaErro(texto) {
+                swal({
+                    html: true,
+                    title: "",
+                    text: texto,
+                    type: "error",
+                    showCancelButton: false,
+                    closeOnConfirm: true,
+                });
+            }
+            function AlertaSucesso(texto) {
+                swal({
+                    html: true,
+                    title: "",
+                    text: texto,
+                    type: "success",
+                    showCancelButton: false,
+                    closeOnConfirm: true,
+                });
+            }
+            function AlertaAtencao(texto) {
+                swal({
+                    html: true,
+                    title: "",
+                    text: texto,
+                    type: "warning",
+                    showCancelButton: false,
+                    closeOnConfirm: true,
+                });
+            }
+            function Alerta(texto) {
+                swal({
+                    html: true,
+                    title: "",
+                    text: texto,
+                    type: "info",
+                    showCancelButton: false,
+                    closeOnConfirm: true,
+                });
+            }
+        </script>
+        </form>
+    </body>
+</asp:Content>

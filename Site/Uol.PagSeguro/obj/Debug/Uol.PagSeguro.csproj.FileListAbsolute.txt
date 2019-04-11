@@ -1,0 +1,6 @@
+F:\SistemaPet\Site\Uol.PagSeguro\bin\Debug\Uol.PagSeguro.XML
+F:\SistemaPet\Site\Uol.PagSeguro\bin\Debug\Uol.PagSeguro.dll
+F:\SistemaPet\Site\Uol.PagSeguro\bin\Debug\Uol.PagSeguro.pdb
+F:\SistemaPet\Site\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.csprojResolveAssemblyReference.cache
+F:\SistemaPet\Site\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.dll
+F:\SistemaPet\Site\Uol.PagSeguro\obj\Debug\Uol.PagSeguro.pdb

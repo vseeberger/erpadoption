@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E51CDF5-60CE-4464-80D3-2201FD2ECCC4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FWPet</RootNamespace>
+    <AssemblyName>FWPet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Componentes\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CryptProvider.cs" />
+    <Compile Include="Dao\cMySqlCommand.cs" />
+    <Compile Include="Dao\Conexao.cs" />
+    <Compile Include="Dao\DaoAdotante.cs" />
+    <Compile Include="Dao\DaoAgenda.cs" />
+    <Compile Include="Dao\DaoAgendaContato.cs" />
+    <Compile Include="Dao\DaoAnamnese.cs" />
+    <Compile Include="Dao\DaoAnimal.cs" />
+    <Compile Include="Dao\DaoAnimalAdotado.cs" />
+    <Compile Include="Dao\DaoAnimalFotos.cs" />
+    <Compile Include="Dao\DaoAnimalMedicamento.cs" />
+    <Compile Include="Dao\DaoAnimalMedicamentoTratamento.cs" />
+    <Compile Include="Dao\DaoAnimalVacina.cs" />
+    <Compile Include="Dao\DaoBeneficioDesconto.cs" />
+    <Compile Include="Dao\DaoCargo.cs" />
+    <Compile Include="Dao\DaoCBO.cs" />
+    <Compile Include="Dao\DaoCentroDeCustos.cs" />
+    <Compile Include="Dao\DaoColaborador.cs" />
+    <Compile Include="Dao\DaoColaboradorEscala.cs" />
+    <Compile Include="Dao\DaoColaboradorFerias.cs" />
+    <Compile Include="Dao\DaoConfiguracoes.cs" />
+    <Compile Include="Dao\DaoContaBancaria.cs" />
+    <Compile Include="Dao\DaoContaBancariaTipo.cs" />
+    <Compile Include="Dao\DaoContaPagarReceber.cs" />
+    <Compile Include="Dao\DaoEmpresa.cs" />
+    <Compile Include="Dao\DaoEndereco.cs" />
+    <Compile Include="Dao\DaoEspecie.cs" />
+    <Compile Include="Dao\DaoEstoque.cs" />
+    <Compile Include="Dao\DaoEstoqueItem.cs" />
+    <Compile Include="Dao\DaoExame.cs" />
+    <Compile Include="Dao\DaoFormaPagamentoRecebimento.cs" />
+    <Compile Include="Dao\DaoFormulario.cs" />
+    <Compile Include="Dao\DaoLogAcao.cs" />
+    <Compile Include="Dao\DaoLogs.cs" />
+    <Compile Include="Dao\DaoMedicamentoGenerico.cs" />
+    <Compile Include="Dao\DaoMedicamentoGrupo.cs" />
+    <Compile Include="Dao\DaoMedicamentoPrincipioAtivo.cs" />
+    <Compile Include="Dao\DaoOrigemCustos.cs" />
+    <Compile Include="Dao\DaoPedidoCompra.cs" />
+    <Compile Include="Dao\DaoPedidoCompraItens.cs" />
+    <Compile Include="Dao\DaoPerfil.cs" />
+    <Compile Include="Dao\DaoPerfilPermissao.cs" />
+    <Compile Include="Dao\DaoPessoas.cs" />
+    <Compile Include="Dao\DaoPessoasDependentes.cs" />
+    <Compile Include="Dao\DaoPorte.cs" />
+    <Compile Include="Dao\DaoProduto.cs" />
+    <Compile Include="Dao\DaoProdutoBarras.cs" />
+    <Compile Include="Dao\DaoProdutoConversao.cs" />
+    <Compile Include="Dao\DaoProdutoMarca.cs" />
+    <Compile Include="Dao\DaoProdutoOutrosFabricantes.cs" />
+    <Compile Include="Dao\DaoProdutoUnidade.cs" />
+    <Compile Include="Dao\DaoRaca.cs" />
+    <Compile Include="Dao\DaoResponsavel.cs" />
+    <Compile Include="Dao\DaoUsuario.cs" />
+    <Compile Include="Dao\DaoVeterinario.cs" />
+    <Compile Include="Dao\DaoPessoaGrauParentesco.cs" />
+    <Compile Include="Model\AdocaoAnexos.cs" />
+    <Compile Include="Model\Agenda.cs" />
+    <Compile Include="Model\AgendaContato.cs" />
+    <Compile Include="Model\AgendaTipoContato.cs" />
+    <Compile Include="Model\Anamnese.cs" />
+    <Compile Include="Model\Anexo.cs" />
+    <Compile Include="Model\Animal.cs" />
+    <Compile Include="Model\AnimalAdotado.cs" />
+    <Compile Include="Model\AnimalFotos.cs" />
+    <Compile Include="Model\AnimalMedicamento.cs" />
+    <Compile Include="Model\AnimalMedicamentoTratamento.cs" />
+    <Compile Include="Model\AnimalVacina.cs" />
+    <Compile Include="Model\BeneficioDesconto.cs" />
+    <Compile Include="Model\Cargo.cs" />
+    <Compile Include="Model\CBO.cs" />
+    <Compile Include="Model\CentroDeCustos.cs" />
+    <Compile Include="Model\Colaborador.cs" />
+    <Compile Include="Model\ColaboradorBeneficioDesconto.cs" />
+    <Compile Include="Model\ColaboradorEscala.cs" />
+    <Compile Include="Model\ColaboradorFerias.cs" />
+    <Compile Include="Model\ConfigFixa.cs" />
+    <Compile Include="Model\Configuracoes.cs" />
+    <Compile Include="Model\ContaBancaria.cs" />
+    <Compile Include="Model\ContaBancariaTipo.cs" />
+    <Compile Include="Model\ContaPagarReceber.cs" />
+    <Compile Include="Model\Disponibilidade.cs" />
+    <Compile Include="Model\Email.cs" />
+    <Compile Include="Model\Empresa.cs" />
+    <Compile Include="Model\Endereco.cs" />
+    <Compile Include="Model\Especie.cs" />
+    <Compile Include="Model\Estoque.cs" />
+    <Compile Include="Model\EstoqueItem.cs" />
+    <Compile Include="Model\Exame.cs" />
+    <Compile Include="Model\Adotante.cs" />
+    <Compile Include="Model\ExameTipo.cs" />
+    <Compile Include="Model\ExceptionPet.cs" />
+    <Compile Include="Model\ExceptionSucesso.cs" />
+    <Compile Include="Model\FormaPagamentoRecebimento.cs" />
+    <Compile Include="Model\Formulario.cs" />
+    <Compile Include="Model\Laboratorio.cs" />
+    <Compile Include="Model\LaboratorioClinico.cs" />
+    <Compile Include="Model\LogAcao.cs" />
+    <Compile Include="Model\Logs.cs" />
+    <Compile Include="Model\MedicamentoGenerico.cs" />
+    <Compile Include="Model\MedicamentoGrupo.cs" />
+    <Compile Include="Model\PedidoCompra.cs" />
+    <Compile Include="Model\PedidoCompraItens.cs" />
+    <Compile Include="Model\ProdutoBarras.cs" />
+    <Compile Include="Model\ProdutoConversao.cs" />
+    <Compile Include="Model\ProdutoLote.cs" />
+    <Compile Include="Model\ProdutoMarca.cs" />
+    <Compile Include="Model\ProdutoOutrosFabricantes.cs" />
+    <Compile Include="Model\MedicamentoPrincipioAtivo.cs" />
+    <Compile Include="Model\OrigemCustos.cs" />
+    <Compile Include="Model\Perfil.cs" />
+    <Compile Include="Model\PerfilPermissao.cs" />
+    <Compile Include="Model\PessoaGrauParentesco.cs" />
+    <Compile Include="Model\Pessoas.cs" />
+    <Compile Include="Model\PessoasDependentes.cs" />
+    <Compile Include="Model\Porte.cs" />
+    <Compile Include="Model\Produto.cs" />
+    <Compile Include="Model\ProdutoUnidade.cs" />
+    <Compile Include="Model\Raca.cs" />
+    <Compile Include="Model\Responsavel.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\Veterinario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

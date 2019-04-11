@@ -1,0 +1,28 @@
+F:\SistemaPet\Site\Site\obj\Debug\Site.dll
+F:\SistemaPet\Site\Site\bin\Site.dll.config
+F:\SistemaPet\Site\Site\bin\Site.dll
+F:\SistemaPet\Site\Site\bin\Site.pdb
+F:\SistemaPet\Site\Site\bin\Correios.Net.dll
+F:\SistemaPet\Site\Site\bin\FWPet.dll
+F:\SistemaPet\Site\Site\bin\Newtonsoft.Json.dll
+F:\SistemaPet\Site\Site\bin\Uol.PagSeguro.dll
+F:\SistemaPet\Site\Site\bin\MySql.Data.dll
+F:\SistemaPet\Site\Site\bin\FWPet.pdb
+F:\SistemaPet\Site\Site\bin\Uol.PagSeguro.pdb
+F:\SistemaPet\Site\Site\bin\Uol.PagSeguro.xml
+F:\SistemaPet\Site\Site\obj\Debug\Site.csprojResolveAssemblyReference.cache
+F:\SistemaPet\Site\Site\obj\Debug\Site.pdb
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\bin\Site.dll.config
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\bin\Site.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\bin\Site.pdb
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\bin\Correios.Net.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\bin\FWPet.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\bin\Newtonsoft.Json.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\bin\Uol.PagSeguro.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\bin\MySql.Data.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\bin\FWPet.pdb
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\bin\Uol.PagSeguro.pdb
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\bin\Uol.PagSeguro.xml
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\obj\Debug\Site.csprojResolveAssemblyReference.cache
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\obj\Debug\Site.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\Site\obj\Debug\Site.pdb

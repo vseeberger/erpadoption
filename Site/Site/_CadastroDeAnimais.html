@@ -1,0 +1,785 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>PetRescue - Sistema para abrigos de animais</title>
+    <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+    <link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+    <link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+    <link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
+    <link href="img/favicon.png" rel="icon" type="image/png">
+    <link href="img/favicon.ico" rel="shortcut icon">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/lib/datatables-net/datatables.min.css">
+    <link rel="stylesheet" href="css/separate/vendor/datatables-net.min.css">
+
+    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body class="with-side-menu">
+    <header class="site-header">
+        <div class="container-fluid">
+
+            <a href="#" class="site-logo">
+                <img class="hidden-md-down" src="img/logo-2.png" alt="">
+                <img class="hidden-lg-up" src="img/logo-2-mob.png" alt="">
+            </a>
+
+            <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
+                <span>toggle menu</span>
+            </button>
+
+            <button class="hamburger hamburger--htla">
+                <span>toggle menu</span>
+            </button>
+            <div class="site-header-content">
+                <div class="site-header-content-in">
+                    <div class="site-header-shown">
+                         <!-- NOTIFICAÇÕES -->
+                        <div class="dropdown dropdown-notification notif">
+                            <a href="#" class="header-alarm dropdown-toggle active" id="dd-notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="font-icon-alarm"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-notif" aria-labelledby="dd-notification">
+                                <div class="dropdown-menu-notif-header">Notificações<span class="label label-pill label-danger">4</span></div>
+                                <div class="dropdown-menu-notif-list">
+                                    <div class="dropdown-menu-notif-item">
+                                        <div class="photo"><img src="img/photo-64-1.jpg" alt=""></div>
+                                        <div class="dot"></div>
+                                        <a href="#">Morgan</a> was bothering about something
+                                        <div class="color-blue-grey-lighter">7 hours ago</div>
+                                    </div>
+                                    <div class="dropdown-menu-notif-item">
+                                        <div class="photo"><img src="img/photo-64-2.jpg" alt=""></div>
+                                        <div class="dot"></div>
+                                        <a href="#">Lioneli</a> had commented on this <a href="#">Super Important Thing</a>
+                                        <div class="color-blue-grey-lighter">7 hours ago</div>
+                                    </div>
+                                    <div class="dropdown-menu-notif-item">
+                                        <div class="photo"><img src="img/photo-64-3.jpg" alt=""></div>
+                                        <div class="dot"></div>
+                                        <a href="#">Xavier</a> had commented on the <a href="#">Movie title</a>
+                                        <div class="color-blue-grey-lighter">7 hours ago</div>
+                                    </div>
+                                    <div class="dropdown-menu-notif-item">
+                                        <div class="photo"><img src="img/photo-64-4.jpg" alt=""></div>
+                                        <a href="#">Lionely</a> wants to go to <a href="#">Cinema</a> with you to see <a href="#">This Movie</a>
+                                        <div class="color-blue-grey-lighter">7 hours ago</div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-menu-notif-more"><a href="#">Ver mais...</a></div>
+                            </div>
+                        </div>
+
+                        <!-- MENSAGENS -->
+                        <div class="dropdown dropdown-notification messages">
+                            <a href="#" class="header-alarm dropdown-toggle active" id="dd-messages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="font-icon-mail"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages">
+                                <div class="dropdown-menu-messages-header">
+                                    <ul class="nav" role="tablist">
+                                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#tab-incoming" role="tab">Recebidos <span class="label label-pill label-danger">8</span></a></li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-outgoing" role="tab">Enviados</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab-incoming" role="tabpanel">
+                                        <div class="dropdown-menu-messages-list">
+                                            <a href="#" class="mess-item">
+                                                <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
+                                                <span class="mess-item-name">Tim Collins</span>
+                                                <span class="mess-item-txt">Morgan was bothering about something!</span>
+                                            </a>
+                                            <a href="#" class="mess-item">
+                                                <span class="avatar-preview avatar-preview-32"><img src="img/avatar-2-64.png" alt=""></span>
+                                                <span class="mess-item-name">Christian Burton</span>
+                                                <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something.</span>
+                                            </a>
+                                            <a href="#" class="mess-item">
+                                                <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
+                                                <span class="mess-item-name">Tim Collins</span>
+                                                <span class="mess-item-txt">Morgan was bothering about something!</span>
+                                            </a>
+                                            <a href="#" class="mess-item">
+                                                <span class="avatar-preview avatar-preview-32"><img src="img/avatar-2-64.png" alt=""></span>
+                                                <span class="mess-item-name">Christian Burton</span>
+                                                <span class="mess-item-txt">Morgan was bothering about something...</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab-outgoing" role="tabpanel">
+                                        <div class="dropdown-menu-messages-list">
+                                            <a href="#" class="mess-item">
+                                                <span class="avatar-preview avatar-preview-32"><img src="img/avatar-2-64.png" alt=""></span>
+                                                <span class="mess-item-name">Christian Burton</span>
+                                                <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something...</span>
+                                            </a>
+                                            <a href="#" class="mess-item">
+                                                <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
+                                                <span class="mess-item-name">Tim Collins</span>
+                                                <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something.</span>
+                                            </a>
+                                            <a href="#" class="mess-item">
+                                                <span class="avatar-preview avatar-preview-32"><img src="img/avatar-2-64.png" alt=""></span>
+                                                <span class="mess-item-name">Christian Burtons</span>
+                                                <span class="mess-item-txt">Morgan was bothering about something!</span>
+                                            </a>
+                                            <a href="#" class="mess-item">
+                                                <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
+                                                <span class="mess-item-name">Tim Collins</span>
+                                                <span class="mess-item-txt">Morgan was bothering about something!</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-menu-notif-more"><a href="#">Ver mais...</a></div>
+                            </div>
+                        </div>
+                    </div><!--.site-header-shown-->
+                </div><!--site-header-content-in-->
+            </div><!--.site-header-content-->
+        </div><!--.container-fluid-->
+    </header><!--.site-header-->
+
+    <div class="mobile-menu-left-overlay"></div>
+    <nav class="side-menu">
+        <ul class="side-menu-list">
+            <li class="grey"><a href="/inicio"><i class="font-icon glyphicon  font-icon-dashboard"></i><span class="lbl">Dashboard</span></a></li>
+            <li class="green-dark with-sub">
+                <span><i class="font-icon font-icon-edit"></i><span class="lbl">Cadastros</span></span>
+                <ul>
+                    <li><a href="#"><span class="lbl">Animais</span></a></li>
+                    <li><a href="#"><span class="lbl">Padrinhos</span></a></li>
+                    <li><a href="#"><span class="lbl">Medicamentos</span></a></li>
+                    <li><a href="#"><span class="lbl">Responsável - Resgate</span></a></li>
+                    <li><a href="#"><span class="lbl">Raça</span></a></li>
+                </ul>
+            </li>
+            <!--<li class="grey with-sub">
+                <span><i class="font-icon font-icon-dashboard"></i><span class="lbl">Dashboard</span></span>
+                <ul>
+                    <li><a href="index.html"><span class="lbl">Default</span><span class="label label-custom label-pill label-danger">new</span></a></li>
+                    <li><a href="dashboard-top-menu.html"><span class="lbl">Top menu</span></a></li>
+                    <li><a href="side-menu-compact-full.html"><span class="lbl">Compact menu</span></a></li>
+                    <li><a href="dashboard-addl-menu.html"><span class="lbl">Submenu</span></a></li>
+                    <li><a href="side-menu-avatar.html"><span class="lbl">Menu with avatar</span></a></li>
+                    <li><a href="side-menu-avatar.html"><span class="lbl">Compact menu with avatar</span></a></li>
+                    <li><a href="dark-menu.html"><span class="lbl">Dark menu</span></a></li>
+                    <li><a href="dark-menu-blue.html"><span class="lbl">Blue dark menu</span></a></li>
+                    <li><a href="dark-menu-green.html"><span class="lbl">Green dark menu</span></a></li>
+                    <li><a href="dark-menu-green-compact.html"><span class="lbl">Green compact dark menu</span></a></li>
+                    <li><a href="dark-menu-ultramarine.html"><span class="lbl">Ultramarine dark menu</span></a></li>
+                    <li><a href="asphalt-menu.html"><span class="lbl">Asphalt top menu</span></a></li>
+                    <li><a href="side-menu-big-icon.html"><span class="lbl">Big menu</span></a></li>
+                </ul>
+            </li>
+            <li class="brown with-sub">
+                <span><i class="font-icon glyphicon glyphicon-tint"></i><span class="lbl">Skins</span></span>
+                <ul>
+                    <li><a href="theme-side-ebony-clay.html"><span class="lbl">Ebony Clay</span></a></li>
+                    <li><a href="theme-side-madison-caribbean.html"><span class="lbl">Madison Caribbean</span></a></li>
+                    <li><a href="theme-side-caesium-dark-caribbean.html"><span class="lbl">Caesium Dark Caribbean</span></a></li>
+                    <li><a href="theme-side-tin.html"><span class="lbl">Tin</span></a></li>
+                    <li><a href="theme-side-litmus-blue.html"><span class="lbl">Litmus Blue</span></a></li>
+                    <li><a href="theme-rebecca-purple.html"><span class="lbl">Rebecca Purple</span></a></li>
+                    <li><a href="theme-picton-blue.html"><span class="lbl">Picton Blue</span></a></li>
+                    <li><a href="theme-picton-blue-white-ebony.html"><span class="lbl">Picton Blue White Ebony</span></a></li>
+                </ul>
+            </li>
+            <li class="purple with-sub">
+                <span><i class="font-icon font-icon-comments active"></i><span class="lbl">Messages</span></span>
+                <ul>
+                    <li><a href="messenger.html"><span class="lbl">Messenger</span></a></li>
+                    <li><a href="chat.html"><span class="lbl">Messages</span><span class="label label-custom label-pill label-danger">8</span></a></li>
+                    <li><a href="chat-write.html"><span class="lbl">Write Message</span></a></li>
+                    <li><a href="chat-index.html"><span class="lbl">Select User</span></a></li>
+                </ul>
+            </li>
+            <li class="red"><a href="mail.html"><i class="font-icon glyphicon glyphicon-send"></i><span class="lbl">Mail</span></a></li>
+            <li class="gold with-sub">
+                <span><i class="font-icon font-icon-edit"></i><span class="lbl">Forms</span></span>
+                <ul>
+                    <li><a href="ui-form.html"><span class="lbl">Basic Inputs</span></a></li>
+                    <li><a href="ui-buttons.html"><span class="lbl">Buttons</span></a></li>
+                    <li><a href="ui-select.html"><span class="lbl">Select &amp; Tags</span></a></li>
+                    <li><a href="ui-checkboxes.html"><span class="lbl">Checkboxes &amp; Radios</span></a></li>
+                    <li><a href="ui-form-validation.html"><span class="lbl">Validation</span></a></li>
+                    <li><a href="typeahead.html"><span class="lbl">Typeahead</span></a></li>
+                    <li><a href="steps.html"><span class="lbl">Steps</span></a></li>
+                    <li><a href="ui-form-input-mask.html"><span class="lbl">Input Mask</span></a></li>
+                    <li><a href="ui-form-extras.html"><span class="lbl">Extras</span></a></li>
+                </ul>
+            </li>-->
+        </ul>
+
+        <!--<section>
+            <header class="side-menu-title">Tags</header>
+            <ul class="side-menu-list">
+                <li>
+                    <a href="#">
+                        <i class="tag-color green"></i>
+                        <span class="lbl">Website</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="tag-color grey-blue"></i>
+                        <span class="lbl">Bugs/Errors</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="tag-color red"></i>
+                        <span class="lbl">General Problem</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="tag-color pink"></i>
+                        <span class="lbl">Questions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="tag-color orange"></i>
+                        <span class="lbl">Ideas</span>
+                    </a>
+                </li>
+            </ul>
+        </section>-->
+    </nav><!--.side-menu-->
+    <!--
+
+    2. Queixa principal.
+
+    3. Sistema digestório.
+    Apetite e deglutição - normorexia, hiporexia, polifagia, parorexia, disfagia, apetite seletivo.
+    Emese e regurgitação - início, quantidade, frequência, aspecto.
+    Defecação e fezes - normoquesia, disquesia, diarréia, hematoquesia/melena, início, aspecto, frequência.
+    Ingestão de água - normodipsia, polidipsia, oligodipsia, adipsia.
+
+    4. Sistema cardio-respiratório.
+    Respiração - dispnéia, taquipnéia, bradipnéia.
+    Tosse/Espirro - período, frequência, produtiva ou não.
+    Secreção nasal e/ou ocular - início, aspecto, quantidade.
+    Intolerância ao exercício - cansaço pós exercício, síncope, cianose.
+    Aumento de volume - edema de membros, ascite, vai para o litoral.
+
+    5. Sistema gênito-urinário.
+    Micção - anúria, oligúria, poliúria, disúria, estrangúria, polaquiúria, colúria, incontinência.
+    Fêmeas - castrada, intrvalo entre cios, cruzamentos, pseudociese, contraceptivos, corrimento, secreção, parto anterior, aborto.
+    Machos - libido, cruzamentos, castrado, agressividade, postura de micção.
+
+    6. Sistema nervoso-locomotor.
+    Convulsões ou alterações de comportamento - início, frequência, tipo, fatores iniciantes, caracterização de fases.
+    Postura e marcha - base ampla, dificuldade para se locomover, dor para se movimentar, ataxia, paresia, paralisia, dificuldade de transpor obstáculos.
+    Possibilidade de intoxicação - banhos, injeção carrapaticida, dedetização, água de bateria.
+
+    7. Peles e anexos.
+    Pele - prurido, descamação, odores, lesões, localizações.
+    Orelha - prurido, secreção, odor, meneios cefálicos, normoacusia, acusia.
+    Unha - crescimento, queda, fratura.
+
+    8. Manejo.
+    Presença de ectoparasitas - pulgas (puliciose), carrapatos (ixodidiose).
+    Ambiente - domiciliado, semi-domiciliado, acesso à rua, quintal, presença de roedores na região.
+    Dieta - ração, comida caseira, frequência, quantidade.
+    Banhos - produto, frequência.
+    Vacinação - quando, quais, onde (campanha, pet shop).
+    Contactantes - quais, estado geral.
+    Antecedentes mórbidos - quando, diagnósticos, resultados de exames complementares, resolução do quadro, tratamentos anteriores.--> 
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="box-typical box-typical-padding" style="padding-top:0;">
+                <h5 class="m-t-lg with-border">Cadastro de Animais</h5>
+                <div class="row">
+                    <div class="col-md-2 col-sm-4 col-xs-12">
+                        <label class="form-control-label">Código</label>
+                        <input type="text" readonly disabled class="form-control" id="inputPassword" value="AUTOMATICO" />
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-8 col-xs-12">
+                        <label class="form-control-label">Nome</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    
+                    <div class="col-md-1 col-sm-4 col-xs-12">
+                        <label class="form-control-label">Espécie</label>
+                        <select class="form-control"><option>Canino</option><option>Felino</option></select>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-8 col-xs-12">
+                        <label class="form-control-label">Raça</label>
+                        <select id="exampleSelect" class="form-control">
+                            <option>SRD</option>
+                            <optgroup>A</optgroup>
+                            <option>Alano Espanhol</option>
+                            <option>Airedale Terrier</option>
+                            <option>American Staffordshire Terrier</option>
+                            <option>American Water Spaniel</option>
+                            <option>Antigo Cão de Pastor Inglês</option>
+                            <optgroup>B</optgroup>
+                            <option>Basset Azul da Gasconha</option>
+                            <option>Basset Fulvo da Bretanha</option>
+                            <option>Basset Hound</option>
+                            <option>Beagle</option>
+                            <option>Bearded Collie</option>
+                            <option>Bichon Maltês</option>
+                            <option>Bobtail</option>
+                            <option>Border Collie</option>
+                            <option>Boston Terrier</option>
+                            <option>Boxer</option>
+                            <option>Bull Terrier</option>
+                            <option>Bullmastiff</option>
+                            <option>Bulldog</option>
+                            <optgroup>C</optgroup>
+                            <option>Cão de Montanha dos Pirinéus</option>
+                            <option>Caniche</option>
+                            <option>Chihuahua</option>
+                            <option>Cirneco do Etna</option>
+                            <option>Chow Chow</option>
+                            <option>Cocker Spaniel (Americano ou Inglês)</option>
+                            <optgroup>D</optgroup>
+                            <option>Dálmata</option>
+                            <option>Dobermann</option>
+                            <option>Dogue Alemão</option>
+                            <option>Dogue Argentino</option>
+                            <option>Dogue Canário</option>
+                            <optgroup>F</optgroup>
+                            <option>Fox Terrier</option>
+                            <option>Foxhound</option>
+                            <optgroup>G</optgroup>
+                            <option>Galgo</option>
+                            <option>Golden Retriever</option>
+                            <option>Gos d'Atura</option>
+                            <optgroup>H</optgroup>
+                            <option>Husky Siberiano</option>
+                            <optgroup>L</optgroup>
+                            <option>Laika</option>
+                            <option>Labrador Retriever</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <label for="rdMacho" class="form-control-label">Sexo</label>
+                        <div class="" data-toggle="buttons">
+                            <label class="btn active">
+                                <input type="radio" name="rdSexo" id="rdMacho" autocomplete="off" checked /> Macho
+                            </label>
+                            <label class="btn">
+                                <input type="radio" name="rdSexo" id="rdFemea" autocomplete="off" /> Fêmea
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <label class="form-control-label">Situação</label>
+                        <select class="form-control"><option>Disponível</option><option>Em adoção</option><option>Adotado</option></select>
+                    </div>
+
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                        <label class="form-control-label">Responsável</label>
+                        <select class="form-control"><option>Quem resgatou</option></select>
+                    </div>
+                </div>
+
+                <br />
+                <div class="form-group row">
+                    <label for="exampleSelect" class="col-md-2 col-sm-4 col-xs-12 form-control-label">Observações</label>
+                    <div class="col-md-10 col-sm-8 col-xs-12">
+                        <textarea rows="4" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> Salvar</button>
+                        <button class="btn btn-danger"><i class="font-icon font-11 font-icon-close-2"></i> Cancelar</button>
+                    </div>
+                </div>
+                <br />
+                <section class="tabs-section">
+                    <div class="tabs-section-nav tabs-section-nav-icons">
+                        <div class="tbl">
+                            <ul class="nav" role="tablist">
+                                <li class="nav-item"><a class="nav-link active" href="#tabs-informacao" role="tab" data-toggle="tab"><span class="nav-link-in">Informações</span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#tabs-anamnese" role="tab" data-toggle="tab"><span class="nav-link-in">Anamneses</span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#tabs-vacina" role="tab" data-toggle="tab"><span class="nav-link-in">Vacinas</span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#tabs-exame" role="tab" data-toggle="tab"><span class="nav-link-in">Exames</span></a></li>
+                            </ul>
+                        </div>
+                    </div><!--.tabs-section-nav-->
+                    <div class="tab-content" style="min-height:200px;">
+                        <div role="tabpanel" class="tab-pane fade in active" id="tabs-informacao">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-4 col-xs-12">
+                                    <label class="form-control-label">Nº chip</label>
+                                    <input type="text" class="form-control" placeholder="se existir" />
+                                </div>
+                                <div class="col-md-2 col-sm-4 col-xs-12">
+                                    <label class="form-control-label">Cor</label>
+                                    <input type="text" class="form-control" id="txt1" />
+                                </div>
+                                <div class="col-md-2 col-sm-4 col-xs-12">
+                                    <label class="form-control-label">Chegou</label>
+                                    <input type="text" class="form-control date-mask" />
+                                </div>
+                                <div class="col-md-2 col-sm-4 col-xs-12">
+                                    <label class="form-control-label">Resgate</label>
+                                    <input type="text" class="form-control date-mask" />
+                                </div>
+                                <div class="col-md-2 col-sm-4 col-xs-12">
+                                    <label class="form-control-label">Nasc.</label>
+                                    <input type="text" class="form-control date-mask" />
+                                </div>
+                                <div class="col-md-2 col-sm-4 col-xs-12">
+                                    <label>Porte</label>
+                                    <select class="form-control">
+                                        <option>Micro</option>
+                                        <option>Pequeno</option>
+                                        <option>Médio</option>
+                                        <option>Grande</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-4 col-xs-12">
+                                    <label class="form-control-label">Status</label>
+                                    <select class="form-control"><option>Ativo</option><option>Inativo</option></select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <label>Pai</label>
+                                    <select class="form-control">
+                                        <option>Desconhecido</option>
+                                        <option>Nome de animais machos do sistema</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <label>Mãe</label>
+                                    <select class="form-control">
+                                        <option>Desconhecido</option>
+                                        <option>Nome de animais fêmeas do sistema</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tabs-anamnese">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12, col-xs-12">
+                                    <button type="button" class="btn btn-inline" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#MAnamnese">Inserir Anamnese</button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="display table table-bordered tabelasComOrder" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Descrição</th>
+                                                <th>Data</th>
+                                                <th>Peso</th>
+                                                <th>Veterinário</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Consulta de rotina</td>
+                                                <td>15/12/2016</td>
+                                                <td>1,400 kg</td>
+                                                <td>Rafael Fiorin</td>
+                                                <td><button class="btn"><i class="glyphicon glyphicon-zoom-in"> </i></button></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Consulta de rotina</td>
+                                                <td>10/11/2016</td>
+                                                <td>1,140 kg</td>
+                                                <td>Rafael Fiorin</td>
+                                                <td><button class="btn"><i class="glyphicon glyphicon-zoom-in"> </i></button></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Consulta de rotina</td>
+                                                <td>05/08/2016</td>
+                                                <td>0,780 kg</td>
+                                                <td>Rafael Fiorin</td>
+                                                <td><button class="btn"><i class="glyphicon glyphicon-zoom-in"> </i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tabs-vacina">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12, col-xs-12">
+                                    <button type="button" class="btn btn-inline" data-toggle="modal" data-target="#MVacinas">Inserir Vacina</button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="display table table-bordered tabelasComOrder" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Vacina</th>
+                                                <th>Dt. Agendada</th>
+                                                <th>Dt. Aplicada</th>
+                                                <th>Dose</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>V10</td>
+                                                <td>-</td>
+                                                <td>15/12/2016</td>
+                                                <td>1/1</td>
+                                                <td>
+                                                    <button class="btn"><i class="glyphicon glyphicon-zoom-in"> </i></button>
+                                                    <button class="btn"><i class="glyphicon glyphicon-ok-circle"> </i></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tabs-exame">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12, col-xs-12">
+                                    <button type="button" class="btn btn-inline" data-toggle="modal" data-target="#MExames">Inserir Exame</button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="display table table-bordered tabelasComOrder" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Data</th>
+                                                <th>Descrição</th>
+                                                <th>Tipo</th>
+                                                <th>Laboratório</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>11/10/2016</td>
+                                                <td>Hemograma</td>
+                                                <td>Exame</td>
+                                                <td>Tommasi</td>
+                                                <td><button class="btn"><i class="glyphicon glyphicon-zoom-in"> </i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--.tab-content-->
+                </section><!--.tabs-section-->
+
+            </div>
+        </div>
+    </div>
+
+    <div id="MAnamnese" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"><i class="font-icon-close-2"></i></button>
+                    <h4 class="modal-title" id="myModalLabel">Anamnese</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <label>Cód</label>
+                            <input type="text" readonly disabled class="form-control" />
+                        </div>
+                        <div class="col-md-2 col-sm-8 col-xs-12">
+                            <label>Data</label>
+                            <input type="text" class="form-control date-mask" />
+                        </div>
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                            <label>Peso</label>
+                            <input type="text" class="form-control peso-mask" />
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top:5px;">
+                        <label class="col-md-2 form-label">Descrição</label>
+                        <div class="col-md-10"><input type="text" class="form-control" /></div>
+                    </div>
+                    <div class="row" style="padding-top:5px;">
+                        <label class="col-md-2 form-label">Veterinário</label>
+                        <div class="col-md-10"><select class="form-control"><option>Nome do veterinário</option></select></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <label>Anamnese</label>
+                            <textarea rows="6" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-rounded btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="MVacinas" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"><i class="font-icon-close-2"></i></button>
+                    <h4 class="modal-title" id="myModalLabel">Vacina</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <label>Cód</label>
+                            <input type="text" readonly disabled class="form-control" />
+                        </div>
+                        <div class="col-md-4 col-sm-5 col-xs-12">
+                            <label>Data Agendamento</label>
+                            <input type="text" class="form-control date-mask" />
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>Data Aplicação</label>
+                            <input type="text" class="form-control date-mask" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7 col-sm-12 col-xs-12">
+                            <label>Vacina</label>
+                            <select class="form-control"><option>Nome da vacina</option></select>
+                        </div>
+                        <div class="col-md-2 col-sm-12 col-xs-12">
+                            <label>Dose</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-md-2 col-sm-12 col-xs-12">
+                            <label>Total</label>
+                            <input type="text" readonly disabled class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-rounded btn-primary">Agendar Próxima - Automático</button>
+                    <button type="button" class="btn btn-rounded btn-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="MExames" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"><i class="font-icon-close-2"></i></button>
+                    <h4 class="modal-title" id="myModalLabel">Exame</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <label>Cód</label>
+                            <input type="text" readonly disabled class="form-control" />
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <label>Tipo</label>
+                            <select class="form-control"><option>Exame</option><option>Laudo</option><option>Outro</option></select>
+                        </div>
+                        <div class="col-md-2 col-sm-8 col-xs-12">
+                            <label>Agendamento</label>
+                            <input type="text" class="form-control date-mask" />
+                        </div>
+                        <div class="col-md-2 col-sm-8 col-xs-12">
+                            <label>Realização</label>
+                            <input type="text" class="form-control date-mask" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <label>Laboratório</label>
+                            <select class="form-control"><option>Nome do laboratório</option></select>
+                        </div>
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                            <label>Descrição</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding-top:5px;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <label>Técnico que assinou o exame</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding-top:5px;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <label>Veterinário</label>
+                            <select class="form-control"><option>Nome do veterinário</option></select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <label>Corpo do exame (ou anexar)</label>
+                            <textarea rows="6" class="form-control"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <label>Anexar</label>
+                            <input type="file" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-rounded btn-danger" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-rounded btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="js/lib/tether/tether.min.js"></script>
+    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    
+    <script src="js/lib/input-mask/jquery.mask.min.js"></script>
+    <script src="js/lib/input-mask/input-mask-init.js"></script>
+
+    <script src="js/lib/datatables-net/datatables.min.js"></script>
+    <script>
+		$(function() {
+			$('.tabelasComOrder').DataTable({
+			    responsive: true
+			});
+		});
+    </script>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

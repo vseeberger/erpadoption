@@ -1,0 +1,283 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/_MPrincipal.Master" AutoEventWireup="true" CodeBehind="_MLogado.master.cs" Inherits="Site._MLogado" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="cHeadScripts" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="cHeaderScripts"></asp:ContentPlaceHolder>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <link rel="stylesheet" href="css/bootstrap_pre.css" />
+    <link rel="stylesheet" href="css/separate/vendor/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="css/lib/fullcalendar/fullcalendar.min.css">
+
+    <link rel="stylesheet" href="css/separate/vendor/tags_editor.min.css">
+    <link rel="stylesheet" href="css/separate/vendor/bootstrap-select/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/separate/vendor/select2.min.css">
+    <link rel="stylesheet" href="css/separate/vendor/bootstrap-touchspin.min.css">
+
+    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .panel-title, .box-typical-header { padding:10px!important; padding-bottom:0!important; }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cBody" runat="server">
+    <body class="with-side-menu">
+        <form id="form1" runat="server">
+            <asp:ScriptManager runat="server" ID="scr01Princ" ClientIDMode="Static">
+                <Scripts>
+                    <asp:ScriptReference Path="~/js/lib/jquery/jquery.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/tether/tether.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/bootstrap/bootstrap.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/plugins.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/bootstrap-sweetalert/sweetalert.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/datatables-net/datatables.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/input-mask/jquery.mask.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/input-mask/input-mask-init.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/jquery-tag-editor/jquery.caret.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/jquery-tag-editor/jquery.tag-editor.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/bootstrap-select/bootstrap-select.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/select2/select2.full.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/moment/moment.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/bootstrap-daterangepicker/daterangepicker.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/daterangepicker/daterangepicker.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/fancybox/jquery.fancybox.pack.js" ScriptMode="Auto" />
+                    
+                    <asp:ScriptReference Path="~/js/lib/jqueryui/jquery-ui.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="https://code.jquery.com/ui/1.12.1/jquery-ui.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/clockpicker/bootstrap-clockpicker.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/fullcalendar/locale-all.js" ScriptMode="Auto" />
+                    
+                    <asp:ScriptReference Path="~/js/lib/jScrollPane/jquery.jscrollpane.min.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/lib/jScrollPane/jquery.mousewheel.js" ScriptMode="Auto" />
+
+                    <asp:ScriptReference Path="~/js/carrega.js" ScriptMode="Auto" />
+                    <asp:ScriptReference Path="~/js/app.js" ScriptMode="Auto" />
+                </Scripts>
+            </asp:ScriptManager>
+            <header class="site-header">
+	            <div class="container-fluid">
+	                <a href="/Dashboard" class="site-logo">
+	                    <img class="hidden-md-down" src="img/logo-2.png" alt="">
+	                    <img class="hidden-lg-up" src="img/logo-2-mob.png" alt="">
+	                </a>
+	
+	                <div class="hamburger hamburger--htla"><span>toggle menu</span></div>
+	                <div class="site-header-content">
+	                    <div class="site-header-content-in">
+	                        <div class="site-header-shown">
+	                            <div class="dropdown user-menu">
+	                                <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/avatar-2-64.png" alt=""></button>
+	                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
+	                                    <a class="dropdown-item" href="/Perfil"><span class="font-icon glyphicon glyphicon-user"></span>Meu Perfil</a>
+	                                    <div class="dropdown-divider"></div>
+                                        <%=((FWPet.Model.Usuario)Session["uLogado"]) != null && ((FWPet.Model.Usuario)Session["uLogado"]).IgnoraPermissoes ? "<a class=\"dropdown-item\" href=\"/Executar.aspx\"><span class=\"font-icon fa fa-flash\"></span>Executar Comandos</a>" : "" %>
+                                        <div class="dropdown-divider"></div>
+                                        
+                                        <asp:LinkButton CssClass="dropdown-item" OnClick="lnkSair_Click" runat="server" ID="lnkSair"><span class="font-icon glyphicon glyphicon-log-out"></span>Sair</asp:LinkButton>
+	                                </div>
+	                            </div>
+	                        </div><!--.site-header-shown-->
+	                    </div><!--site-header-content-in-->
+	                </div><!--.site-header-content-->
+	            </div><!--.container-fluid-->
+	        </header><!--.site-header-->
+
+            <div class="mobile-menu-left-overlay"></div>
+	        <nav class="side-menu">
+                <%--<div class="jspPane" />--%>
+                <ul class="side-menu-list">
+                    <li class="blue-dirty"><a href="/Dashboard"><i class="font-icon font-icon-dashboard"></i><span class="lbl">Dashboard</span></a></li>
+                    <asp:Repeater runat="server" ID="rptMenu">
+                        <ItemTemplate>
+                            <li class='<%#Convert.ToBoolean(Eval("TemFilhos")) ? Eval("SClass", "{0} with-sub") : Eval("SClass", "{0}") %>'>
+                                <%#Convert.ToBoolean(Eval("TemFilhos")) ? String.Format("<span>{0}<span class='lbl'>{1}</span></span>", Eval("SIcone", String.IsNullOrEmpty(Eval("SIcone").ToString()) ? "" : Eval("SIcone","<i class='{0}'> </i>")), Eval("SNome")) : 
+                                         String.Format("<a href='{0}'>{1}<span class='lbl'>{2}</span></a>", (String.IsNullOrEmpty(Eval("SUrlCurta").ToString()) ? Eval("SPath", "/{0}") : Eval("SUrlCurta", "/{0}") ), Eval("SIcone", String.IsNullOrEmpty(Eval("SIcone").ToString()) ? "" : Eval("SIcone","<i class='{0}'> </i>")), Eval("SNome")) %>
+                                
+                                <%--<a href='<%#Eval("SUrlCurta") %>'><%#String.IsNullOrEmpty(Eval("SIcone").ToString()) ? "" : Eval("SIcone","<i class='{0}'> </i>") %><span class="lbl"><%#Eval("SNome") %></span></a>--%>
+
+                                <asp:Repeater runat="server" ID="rptInside" DataSource='<%#Eval("Filhos") %>'>
+                                    <HeaderTemplate><ul></HeaderTemplate>
+                                    <FooterTemplate></ul></FooterTemplate>
+                                    <ItemTemplate>
+                                        <li><a href='<%#String.IsNullOrEmpty(Eval("SUrlCurta").ToString()) ? Eval("SPath", "/{0}") : Eval("SUrlCurta", "/{0}") %>'><span class="lbl"><%#Eval("SNome") %></span></a></li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <%--
+                    
+                    <li class="green-dark"><a href="/TodosOsAnimais"><i class="fa fa-paw"></i> <span class="lbl">Animais</span></a></li>
+                    <li class="green-dark"><a href="/TodosOsAgendamentos"><i class="font-icon font-icon-post"></i> <span class="lbl">Agendamentos</span></a></li>
+                    <li class="blue-sky"><a href="/Escalas"><i class="font-icon font-icon-calend"></i> <span class="lbl">Escalas</span></a></li>
+                    <li class="blue-sky"><a href="/TodosOsProdutos"><i class="fa fa-connectdevelop"></i> <span class="lbl">Produtos</span></a></li>
+                    
+                    <li class="green-dark"><a href="/EstoqueProduto"><i class="glyphicon glyphicon-retweet"></i> <span class="lbl">Estoque</span></a></li>
+                    <li class="blue-dirty"><a href="/Almoxarifado"><i class="glyphicon glyphicon-transfer"></i><span class="lbl">Almoxarifado</span></a></li>
+                    
+                    <li class="red with-sub">
+	                    <span><i class="font-icon glyphicon glyphicon-bell"></i><span class="lbl">Basicos</span></span>
+	                    <ul>
+                            <li><a href="/TodasAsRacas"><span class="lbl">Raças</span></a></li>
+                            <li><a href="/TodosPrincipioAtivo"><span class="lbl">Princípio Ativo</span></a></li>  
+                            <li><a href="/TodosOsContatos"><span class="lbl">Contatos</span></a></li>
+                            <li><a href="/TodasAsMarcas"><span class="lbl">Marca</span></a></li>
+                            <li><a href="/TodosOsInventarios"><span class="lbl">Inventários</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="blue with-sub">
+	                    <span><i class="font-icon glyphicon glyphicon-globe"></i><span class="lbl">Empresas</span></span>
+	                    <ul>
+                            <li><a href="/TodasAsClinicas"><span class="lbl">Clinicas/Laboratorios</span></a></li>
+                            <li><a href="/TodosOsLaboratorios"><span class="lbl">Fabricantes</span></a></li>
+                            <li><a href="/TodosOsFornecedores"><span class="lbl">Fornecedores</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="green with-sub">
+	                    <span><i class="font-icon glyphicon glyphicon-user"></i><span class="lbl">Pessoas</span></span>
+	                    <ul>
+                            
+                            <li><a href="/TodosOsPadrinhos"><span class="lbl">Padrinhos</span></a></li>
+                            <li><a href="/TodosOsVeterinarios"><span class="lbl">Veterinários</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="grey with-sub">
+	                    <span><i class="font-icon fa fa-money"></i><span class="lbl">Contábil</span></span>
+	                    <ul>
+                            <li><a href="/TodasAsMovimentacoes"><span class="lbl">Financeiro</span></a></li>
+                            <li><a href="/TodasAsContas"><span class="lbl">Contas</span></a></li>
+                            <li><a href="/TodosOsCentrosDeCustos"><span class="lbl">Centro de custos</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="green with-sub">
+	                    <span><i class="fa fa-group"></i><span class="lbl">Dpto. Pessoal</span></span>
+	                    <ul>
+                            <li><a href="/TodosOsColaboradores"><span class="lbl">Colaboradores</span></a></li>
+                            <li><a href="/TodosOsCargos"><span class="lbl">Cargos</span></a></li>
+                            <li><a href="/TodosOsCBOs"><span class="lbl">CBO</span></a></li>
+                            <li><a href="/TodosOsParentescos"><span class="lbl">Grau de Parentesco</span></a></li>
+                            <li><a href="/TodosOsBeneficios"><span class="lbl">Beneficios</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="brown with-sub">
+	                    <span><i class="font-icon glyphicon glyphicon-adjust"></i><span class="lbl">Configurações</span></span>
+	                    <ul>
+	                        <li><a href="/TodosOsUsuarios"><span class="lbl">Usuários</span></a></li>
+	                        <li><a href="/TodosOsPerfis"><span class="lbl">Perfil</span></a></li>
+	                        <li><a href="/TodosOsFormularios"><span class="lbl">Formulários</span></a></li>
+                            <li><a href="/LogsDeAcesso"><span class="lbl">Log de acesso</span></a></li>
+                            <li><a href="/Configuracoes"><span class="lbl">Configurações</span></a></li>
+	                    </ul>
+	                </li>--%>
+	            </ul>
+	        </nav><!--.side-menu-->
+
+            <div class="page-content">
+		        <div class="container-fluid">
+			        <asp:ContentPlaceHolder ID="cConteudo" runat="server"></asp:ContentPlaceHolder>
+		        </div><!--.container-fluid-->
+	        </div><!--.page-content-->
+            <style>
+                /*.span .select2-container { z-index: 10050!important; }*/
+            </style>
+            <asp:ContentPlaceHolder runat="server" ID="cFooterScripts"></asp:ContentPlaceHolder>
+            <script>
+                function AlertaErro(texto, redirect) {
+                    swal({
+                        html: true,
+                        title: "",
+                        text: texto,
+                        type: "error",
+                        showCancelButton: false,
+                        closeOnConfirm: true,
+                    }, function (acao) {
+                        if (acao && redirect != "") {
+                            location.href = redirect;
+                        }
+                    });
+                }
+                function AlertaSucesso(texto, redirect) {
+                    swal({
+                        html: true,
+                        title: "",
+                        text: texto,
+                        type: "success",
+                        showCancelButton: false,
+                        closeOnConfirm: true,
+                    }, function (acao) {
+                        if (acao && redirect != "") {
+                            location.href = redirect;
+                        }
+                    });
+                }
+                function AlertaAtencao(texto, redirect) {
+                    swal({
+                        html: true,
+                        title: "",
+                        text: texto,
+                        type: "warning",
+                        showCancelButton: false,
+                        closeOnConfirm: true,
+                    }, function (acao) {
+                        if (acao && redirect != "") {
+                            location.href = redirect;
+                        }
+                    });
+                }
+                function Alerta(texto, redirect) {
+                    swal({
+                        html: true,
+                        title: "",
+                        text: texto,
+                        type: "info",
+                        showCancelButton: false,
+                        closeOnConfirm: true,
+                    }, function (acao) {
+                        if (acao && redirect != "") {
+                            location.href = redirect;
+                        }
+                    });
+                }
+
+                function AlertaContinuar(texto, redirectConcluido, redirectContinuar) {
+                    swal({
+                            html: true,
+                            title: "",
+                            text: texto + "<br />Deseja continuar cadastrando?",
+                            type: "info",
+                            showCancelButton: true,
+                            closeOnConfirm: true,
+                            closeOnCancel: true,
+
+                            confirmButtonClass: "btn-success",
+                            confirmButtonText: "Sim, tenho outros!",
+                            cancelButtonText: "Não, já terminei!",
+
+                        },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                location.href = redirectContinuar;
+                            } else {
+                                location.href = redirectConcluido;
+                            }
+                        }
+                    );
+                }
+
+                function fnConfirmar() {
+                    if (confirm("Você tem certeza que deseja APAGAR este registro?")) return true;
+                    else return false;
+                };
+
+
+                $(".primeiro").focus();
+            </script>
+        </form>
+    </body>
+</asp:Content>

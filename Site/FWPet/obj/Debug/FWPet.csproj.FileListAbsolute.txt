@@ -1,0 +1,23 @@
+E:\SistemaPet\Site\FWPet\bin\Debug\FWPet.dll
+E:\SistemaPet\Site\FWPet\bin\Debug\FWPet.pdb
+E:\SistemaPet\Site\FWPet\obj\Debug\FWPet.dll
+E:\SistemaPet\Site\FWPet\obj\Debug\FWPet.pdb
+E:\SistemaPet\Site\FWPet\obj\Debug\FWPet.csprojResolveAssemblyReference.cache
+F:\SistemaPet\Site\FWPet\bin\Debug\FWPet.dll
+F:\SistemaPet\Site\FWPet\bin\Debug\FWPet.pdb
+F:\SistemaPet\Site\FWPet\bin\Debug\MySql.Data.dll
+F:\SistemaPet\Site\FWPet\bin\Debug\Newtonsoft.Json.dll
+F:\SistemaPet\Site\FWPet\bin\Debug\System.Net.Http.dll
+F:\SistemaPet\Site\FWPet\bin\Debug\System.Net.Http.xml
+F:\SistemaPet\Site\FWPet\obj\Debug\FWPet.dll
+F:\SistemaPet\Site\FWPet\obj\Debug\FWPet.pdb
+F:\SistemaPet\Site\FWPet\obj\Debug\FWPet.csprojResolveAssemblyReference.cache
+C:\Valter\Cartao de memoria\SistemaPet\Site\FWPet\bin\Debug\FWPet.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\FWPet\bin\Debug\FWPet.pdb
+C:\Valter\Cartao de memoria\SistemaPet\Site\FWPet\bin\Debug\MySql.Data.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\FWPet\bin\Debug\Newtonsoft.Json.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\FWPet\bin\Debug\System.Net.Http.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\FWPet\bin\Debug\System.Net.Http.xml
+C:\Valter\Cartao de memoria\SistemaPet\Site\FWPet\obj\Debug\FWPet.csprojResolveAssemblyReference.cache
+C:\Valter\Cartao de memoria\SistemaPet\Site\FWPet\obj\Debug\FWPet.dll
+C:\Valter\Cartao de memoria\SistemaPet\Site\FWPet\obj\Debug\FWPet.pdb
